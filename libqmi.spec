@@ -1,11 +1,11 @@
 Summary:	GLib library for talking to WWAN modems and devices using QMI protocol
 Name:		libqmi
-Version:	1.8.0
+Version:	1.10.2
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://www.freedesktop.org/software/libqmi/%{name}-%{version}.tar.xz
-# Source0-md5:	1c4c64c0894f691632727363abec32b8
+# Source0-md5:	b5b3aa098ac33c246f4a8122b7d04d05
 URL:		http://www.freedesktop.org/wiki/Software/libqmi/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -57,6 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
+%check
+%{__make} check
 
 %clean
 rm -rf $RPM_BUILD_ROOT
